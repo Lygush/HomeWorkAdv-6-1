@@ -7,7 +7,7 @@ bool comp(std::pair<int, char> a, std::pair<int, char> b) {
 }
 
 int main() {
-    std::string line{"Hellow world!!"};
+    std::string line{"Hellow World!!"};
     std::list<std::pair<int, char>> list;
 
     std::multiset<char> set;
@@ -15,7 +15,7 @@ int main() {
         set.emplace(i);
     }
     for (const auto& i: set) {
-        list.push_back(std::make_pair(set.count(i),i));
+        list.push_back(std::make_pair(static_cast<int>(set.count(i)),i));
     }
     list.sort(comp);
     list.unique();
